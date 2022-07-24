@@ -1,9 +1,65 @@
 @import "../../styles/colors.scss";
 
-.home-page{
+.home-page {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $primary;
+
+    .main-container {
+        width: 50%;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            color: $primaryText;
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        .search-input {
+            background-color: $secondary;
+            color: $primaryText;
+            margin: 1em 0;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+
+            &::placeholder {
+                color: rgb(171, 171, 171);
+            }
+        }
+
+        .inputContainer {
+            display: flex;
+            align-items: center;
+            .search-input {
+                flex: 1;
+                border-radius: 5px 0 0 5px;
+                border: none;
+                padding: 1em;
+                background-color: $secondary;
+                color: $primaryText;
+                outline: none;
+                font-size: 18px;
+                height: 60px;
+            }
+
+            .searchButton {
+                height: 60px;
+                border-radius: 0 5px 5px 0;
+                padding:1em;
+                background-color: $accent;
+                color: $primaryText;
+                cursor: pointer;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
 }
