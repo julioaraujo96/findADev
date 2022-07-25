@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
-import './styles.scss'
+import React, { useState } from "react";
+import Card from "../../Components/Card/Card";
+import Header from "../../Components/Header/Header";
+import "./styles.scss";
 
 const Home = () => {
   return (
     <div className="home-page">
       <div className="main-container">
-        <header>
-          <h1>findADev.</h1>
-          <span>Light</span>
-        </header>
+        <Header />
         <form className="inputContainer">
           <input
             type="text"
@@ -19,6 +18,9 @@ const Home = () => {
             Search
           </button>
         </form>
+        <Card>
+            <h1>hello</h1>
+        </Card>
       </div>
     </div>
   );
