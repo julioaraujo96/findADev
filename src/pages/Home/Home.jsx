@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import Header from "../../Components/Header/Header";
+import Button from "../../Components/UI/Button/Button";
+import { useNavigate } from "react-router-dom";
 import "./styles.scss";
 
 const Home = () => {
   //state
   const [searchText, setSearchText] = useState('');
 
-  const handleSubmit = () => {
+  let navigate = useNavigate();
+
+  const handleSubmit = (e) => {
     e.preventDefault()
     if(searchText && searchText.trim()){
       //todo: add routing and push search to /search/:user
+      navigate(`/search/${searchText.trim()}`);
     }
   };
 
@@ -17,7 +22,7 @@ const Home = () => {
     <div className="home-page">
       <div className="main-container">
         <Header />
-        <form className="input-container" onSubmit={() => handleSubmit()}>
+        <form className="input-container" onSubmit={(e) => handleSubmit(e)}>
           <input
             type="text"
             className="search-input"
@@ -25,9 +30,9 @@ const Home = () => {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button type="submit" className="search-button">
+          <Button type="submit" modifier="search">
             Search
-          </button>
+          </Button>
         </form>
       </div>
     </div>
