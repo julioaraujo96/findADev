@@ -1,79 +1,65 @@
 @import "../../styles/colors.scss";
 
-.home-page {
-    height: 100%;
+header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: $primary;
+    color: $primaryText;
 
-    .main-container {
-        width: 50%;
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: $primaryText;
-
-            h1 {
-                font-size: 24px;
-            }
-        }
-
-        .search-input {
-            background-color: $secondary;
-            color: $primaryText;
-            margin: 1em 0;
-            border-radius: 5px;
-            outline: none;
-            border: none;
-
-            &::placeholder {
-                color: rgb(171, 171, 171);
-            }
-        }
-
-        .input-container {
-            display: flex;
-            align-items: center;
-
-            .search-input {
-                flex: 1;
-                border-radius: 5px 0 0 5px;
-                border: none;
-                padding: 1em;
-                background-color: $secondary;
-                color: $primaryText;
-                outline: none;
-                font-size: 18px;
-                height: 60px;
-            }
-        }
+    h1 {
+        font-size: 24px;
     }
-
 }
 
-@media only screen and (max-width: 940px){
-    .home-page{
-        .main-container{
-            width: 60%;
-        }
-    }
-    .search-container{
-      width: 50%;
-    }
-  }
+.search-input {
+    background-color: $secondary;
+    color: $primaryText;
+    margin: 1em 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
 
-  @media only screen and (max-width: 490px){
-   
-    .input-container{
-      flex-direction: column;
-      .search-button{
-        margin-top: 16px;
-        border-radius: 5px;
-        padding: 8px 16px;
-        width: 100%;
-      }
+    &::placeholder {
+        color: rgb(171, 171, 171);
+    }
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+
+    .search-input {
+        flex: 1;
+        border-radius: 5px 0 0 5px;
+        border: none;
+        padding: 1em;
+        background-color: $secondary;
+        color: $primaryText;
+        outline: none;
+        font-size: 18px;
+        height: 60px;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 940px) {
+    .search-container {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 490px) {
+
+    .input-container {
+        flex-direction: column;
+
+        .search-button {
+            margin-top: 16px;
+            border-radius: 5px;
+            padding: 8px 16px;
+            width: 100%;
+        }
     }
 }

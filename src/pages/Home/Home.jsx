@@ -3,6 +3,8 @@ import Header from "../../Components/Header/Header";
 import Button from "../../Components/UI/Button/Button";
 import { useNavigate } from "react-router-dom";
 import "./styles.scss";
+import Layout from "../../Components/UI/Layout/Layout";
+import Container from "../../Components/UI/Container/Container";
 
 const Home = () => {
   //state
@@ -13,14 +15,13 @@ const Home = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if(searchText && searchText.trim()){
-      //todo: add routing and push search to /search/:user
       navigate(`/search/${searchText.trim()}`);
     }
   };
 
   return (
-    <div className="home-page">
-      <div className="main-container">
+      <Layout>
+        <Container>
         <Header />
         <form className="input-container" onSubmit={(e) => handleSubmit(e)}>
           <input
@@ -34,8 +35,8 @@ const Home = () => {
             Search
           </Button>
         </form>
-      </div>
-    </div>
+      </Container>
+      </Layout>
   );
 };
 
