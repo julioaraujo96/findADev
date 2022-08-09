@@ -8,20 +8,20 @@ import Container from "../../Components/UI/Container/Container";
 
 const Home = () => {
   //state
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
 
   let navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    if(searchText && searchText.trim()){
+    e.preventDefault();
+    if (searchText && searchText.trim()) {
       navigate(`/search/${searchText.trim()}`);
     }
   };
 
   return (
-      <Layout>
-        <Container>
+    <Layout>
+      <Container>
         <Header />
         <form className="input-container" onSubmit={(e) => handleSubmit(e)}>
           <input
@@ -36,7 +36,7 @@ const Home = () => {
           </Button>
         </form>
       </Container>
-      </Layout>
+    </Layout>
   );
 };
 
