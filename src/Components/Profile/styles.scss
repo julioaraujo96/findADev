@@ -1,3 +1,35 @@
-.user-container {}
+@import "../../styles/colors.scss";
 
-.user-avatar {}
+.user-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.user-avatar {
+    img {
+        max-width: 200px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+}
+
+.user-details {
+    padding: 1em;
+    line-height: 40px;
+    font-size: clamp(14px, 62.5%, 16px);
+    color: #cecaca;
+
+    ul {
+        list-style-type: none;
+    }
+
+    a,
+    a:visited {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $accent;
+    }
+}
