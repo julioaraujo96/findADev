@@ -4,8 +4,10 @@ import Layout from "../../Components/UI/Layout/Layout";
 import Card from "../../Components/Card/Card";
 import Profile from "../../Components/Profile/Profile";
 import Spinner from "../../Components/Spinner/Spinner";
-import { useParams } from "react-router-dom";
+import { BiArrowBack } from "react-icons/bi";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import "./styles.scss";
 
 const api_url = "https://api.github.com/users/";
 //https://api.github.com/users/defunkt
@@ -18,11 +20,14 @@ const SearchResult = () => {
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      const { data, status } = await axios.get(`${api_url}${user}`);
-      if (status === 200) {
-        setUserData(data);
-        setIsLoading(false);
-      } else {
+      try {
+        const { data, status } = await axios.get(`${api_url}${user}`);
+        if (status === 200) {
+          setUserData(data);
+          setIsLoading(false);
+        }
+      } catch (e) {
+        console.log(e);
         setError("Failed to fetch data from server...");
         setIsLoading(false);
       }
@@ -40,12 +45,23 @@ const SearchResult = () => {
       ));
     }
     if (error) {
-      return (output = error);
+      return (output = <span className="error">{error}</span>);
     }
   };
   return (
     <Layout>
-      <Container>{isLoading ? <Spinner /> : outputData()}</Container>
+      <Container>
+        {isLoading ? <Spinner /> : outputData()}
+        {!isLoading && (
+          <div className="btn-back">
+            <button>
+              <Link to="/">
+                Return <BiArrowBack className="arrow" />
+              </Link>
+            </button>
+          </div>
+        )}
+      </Container>
     </Layout>
   );
 };

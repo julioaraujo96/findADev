@@ -1,0 +1,32 @@
+@import "../../styles/colors.scss";
+
+.btn-back {
+    margin: 1em 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        gap: 5px;
+        padding: .2em;
+        color: white;
+        background: $accent;
+
+        &:hover {
+            scale: 1.1;
+        }
+    }
+}
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.error {
+    color: $error;
+}
