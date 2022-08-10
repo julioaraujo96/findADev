@@ -3,6 +3,7 @@ import Container from "../../Components/UI/Container/Container";
 import Layout from "../../Components/UI/Layout/Layout";
 import Card from "../../Components/Card/Card";
 import Profile from "../../Components/Profile/Profile";
+import Spinner from "../../Components/Spinner/Spinner";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -20,21 +21,31 @@ const SearchResult = () => {
       const { data, status } = await axios.get(`${api_url}${user}`);
       if (status === 200) {
         setUserData(data);
+        setIsLoading(false);
       } else {
         setError("Failed to fetch data from server...");
+        setIsLoading(false);
       }
-      setIsLoading(false);
     };
     fetchData();
   }, []);
 
-  return (
-    <Layout>
-      <Container>
+  const outputData = () => {
+    let output;
+    if (userData && !error) {
+      return (output = (
         <Card>
           <Profile user={user} userData={userData} />
         </Card>
-      </Container>
+      ));
+    }
+    if (error) {
+      return (output = error);
+    }
+  };
+  return (
+    <Layout>
+      <Container>{isLoading ? <Spinner /> : outputData()}</Container>
     </Layout>
   );
 };
