@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <div className={`app ${theme}`}>
       <div className="wrapper">
-        <Header />
+        <Header theme={theme} />
         {children}
       </div>
     </div>

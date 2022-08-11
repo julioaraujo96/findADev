@@ -1,10 +1,11 @@
 import React from "react";
 import Switch from "../UI/Switch/Switch";
+import "./styles.scss";
 
-const Header = () => {
+const Header = ({ theme }) => {
   return (
     <header>
-      <h1>findADev.</h1>
+      <h1 className={`text-${theme}`}>findADev.</h1>
       <Switch />
     </header>
   );

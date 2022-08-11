@@ -12,12 +12,13 @@ header {
 }
 
 .search-input {
-    background-color: $secondary;
     color: $primaryText;
     margin: 1em 0;
     border-radius: 5px;
     outline: none;
     border: none;
+    background-color: $secondary;
+
 
     &::placeholder {
         color: rgb(171, 171, 171);
@@ -33,14 +34,21 @@ header {
         border-radius: 5px 0 0 5px;
         border: none;
         padding: 1em;
-        background-color: $secondary;
-        color: $primaryText;
         outline: none;
         font-size: 18px;
         height: 60px;
     }
 }
 
+.input-dark {
+    background-color: $secondary;
+    color: $primaryText;
+}
+
+.input-light {
+    background-color: #fff;
+    color: black;
+}
 
 
 
