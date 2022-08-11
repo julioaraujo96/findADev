@@ -1,9 +1,23 @@
 @import "../../../styles/colors.scss";
 
-.home-page {
+.app {
     height: 100%;
+    background-color: $primary;
     display: flex;
-    justify-content: center;
     align-items: center;
+    transition: background 0.5s ease-in-out;
+}
+
+.wrapper {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.light {
+    background-color: $primary-light;
+}
+
+.dark {
     background-color: $primary;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import Header from "../../Components/Header/Header";
 import Button from "../../Components/UI/Button/Button";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +22,6 @@ const Home = () => {
   return (
     <Layout>
       <Container>
-        <Header />
         <form className="input-container" onSubmit={(e) => handleSubmit(e)}>
           <input
             type="text"
