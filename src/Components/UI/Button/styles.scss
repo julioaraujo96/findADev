@@ -5,13 +5,19 @@
     border-radius: 0 5px 5px 0;
     padding: 1em;
     border: none;
-    background-color: $accent;
     color: $primaryText;
     cursor: pointer;
 
     &:hover {
         opacity: 0.8;
     }
+}
+.btn-light{
+  background:$primary;
+}
+
+.btn-dark{
+  background: $primary-light;
 }
 
 @media only screen and (max-width: 490px) {
