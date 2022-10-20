@@ -11,7 +11,7 @@ import "./styles.scss";
 import Button from "../../Components/UI/Button/Button";
 
 const api_url = "https://api.github.com/users/";
-//https://api.github.com/users/defunkt
+
 const SearchResult = () => {
   const { user } = useParams();
   const [userData, setUserData] = useState({});
@@ -28,7 +28,6 @@ const SearchResult = () => {
           setIsLoading(false);
         }
       } catch (e) {
-        console.log(e);
         setError("Failed to fetch data from server...");
         setIsLoading(false);
       }

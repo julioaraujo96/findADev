@@ -23,7 +23,7 @@ const Profile = ({ user, userData }) => {
           <li>
             <a href={`https://www.github.com/${user}`} target="_blank">
               {userData.public_repos
-                ? `${userData.public_repos} repos`
+                ? `${userData.public_repos} repos <`
                 : "No repos."}
             </a>
           </li>
