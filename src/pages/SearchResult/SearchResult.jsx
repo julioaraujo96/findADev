@@ -8,6 +8,7 @@ import { BiArrowBack } from "react-icons/bi";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./styles.scss";
+import Button from "../../Components/UI/Button/Button";
 
 const api_url = "https://api.github.com/users/";
 //https://api.github.com/users/defunkt
@@ -54,11 +55,11 @@ const SearchResult = () => {
         {isLoading ? <Spinner /> : outputData()}
         {!isLoading && (
           <div className="btn-back">
-            <button>
+            <Button type="button" modifier="return">
               <Link to="/">
                 Return <BiArrowBack className="arrow" />
               </Link>
-            </button>
+            </Button>
           </div>
         )}
       </Container>

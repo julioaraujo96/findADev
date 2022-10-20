@@ -1,7 +1,14 @@
 @import "../../styles/colors.scss";
 
 .profile-card {
-    background-color: $secondary;
     border-radius: 5px;
     padding: 1em;
+}
+
+.card-dark{
+    background-color: $secondary;
+}
+
+.card-light{
+  background-color: $secondary-light;
 }

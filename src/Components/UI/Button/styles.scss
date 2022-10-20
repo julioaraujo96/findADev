@@ -12,12 +12,32 @@
         opacity: 0.8;
     }
 }
-.btn-light{
-  background:$primary;
+
+.return-button{
+  color:$primaryText;
+  padding: .5em;
+  margin-top: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+
+  button{
+  display:flex;
+  align-items: center;
+  }
+
+  &:hover{
+    opacity:0.8;
+  }
 }
 
+
 .btn-dark{
-  background: $primary-light;
+  background:$secondary;
+}
+
+.btn-light{
+  background: $secondary-light;
 }
 
 @media only screen and (max-width: 490px) {
