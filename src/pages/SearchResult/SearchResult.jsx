@@ -3,6 +3,7 @@ import Container from "../../Components/UI/Container/Container";
 import Layout from "../../Components/UI/Layout/Layout";
 import Card from "../../Components/Card/Card";
 import Profile from "../../Components/Profile/Profile";
+import Favorite from "../../Components/UI/Favorite/Favorite"
 import Spinner from "../../Components/Spinner/Spinner";
 import { BiArrowBack } from "react-icons/bi";
 import { useParams, Link } from "react-router-dom";
@@ -41,6 +42,7 @@ const SearchResult = () => {
       return (output = (
         <Card>
           <Profile user={user} userData={userData} />
+          <Favorite />
         </Card>
       ));
     }
