@@ -9,7 +9,7 @@ const Profile = ({ user, userData }) => {
       </div>
       <div className="user-details">
         <ul>
-          <li>{userData.bio ? userData.bio : "No bio."}</li>
+          <li className="user-bio">{userData.bio ? userData.bio : "No bio."}</li>
           <li>
             {userData.followers
               ? `${userData.followers} followers`
